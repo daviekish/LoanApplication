@@ -1,0 +1,90 @@
+﻿@model DomainLayer.Models.AddLoanViewModel
+
+@{
+}
+
+<h2>Enter the information below</h2>
+
+
+
+<form method="post" action="Add">
+
+
+    <div class="form-group">
+        <label for="" class="form-label">Enter Your Full Name</label>
+        <input type="text" class="form-control" required asp-for="FullName" />
+    </div>
+
+    <div class="form-group">
+        <label for="" class="form-label">Select Bank</label>
+        <select asp-for="Name" class="form-control" required>
+            <option value="Bank A">Bank A</option>
+            <option value="Bank B">Bank B</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="" class="form-label">Select Loan Type</label>
+        <select asp-for="LoanType" class="form-control" required>
+            <option value ="FlatRate">Flat Rate</option>
+            <option value="ReducingBalance">Reducing Balance</option>
+        </select>
+    </div>
+ 
+    <div class="form-group">
+        <label for="" class="form-label">Loan Amount</label>
+        <input type="number" class="form-control" required asp-for="LoanAmount"/>
+    </div>
+
+    <div class="form-group">
+        <label for="" class="form-label">Loan Period</label>
+        <input type="number" class="form-control" required asp-for="LoanPeriod" />
+    </div>
+
+    <div class="form-group">
+        <label for="" class="form-label">Start Date</label>
+        <input type="date" class="form-control" required asp-for="StartDate" />
+    </div>
+
+    <div class="form-group">
+        <label for="" class="form-label">Select Payment Frequency</label>
+        <select asp-for="PaymentFreq" class="form-control" required>
+            <option value="Monthly">Monthly</option>
+            <option value="Quarterly">Quarterly</option>
+            <option value="Every6Months">Every 6 Months</option>
+            <option value="Annually">Annually</option>
+        </select>
+    </div>
+
+    <br/>
+    <h3>Loan Interest Fee:</h3>
+    <div class="form-group">
+        <label for="Percentage"> Processing Fee (3%): </label>
+        <input type="number" id="ProcessingFee" name="ProcessingFee"  class="form-control" required value="@Model.ProcessingFee" readonly />
+    </div>
+
+    <div class="form-group">
+        <label for="Percentage"> Excess Duty (20%): </label>
+        <input type="number" id="ExcessDuty" name="ExcessDuty"  class="form-control" required value="@Model.ExcessDuty" readonly />
+    </div>
+
+    <div class="form-group">
+        <label for="FixedAmount">Legal Fees (Ksh):</label>
+        <input type="number"  class="form-control" value="@Model.LegalFees" readonly />
+    </div>
+
+    <br />
+    <br />
+    <h3>Your Total loan is:</h3>
+
+    <div class="form-group">
+        <label for="" class="form-label">Loan Amount</label>
+        <input type="number" step="0.01" class="form-control" required value="@Model.TakeHome" readonly />
+    </div>
+
+    <br />
+    <br />
+    <button type="submit" class="btn btn-primary" >Calculate</button>
+
+</form>
+

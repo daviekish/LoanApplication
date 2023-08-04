@@ -1,0 +1,52 @@
+﻿@model List<DomainLayer.LoanScheduleViewModel>
+
+@{
+}
+
+<h1>Loan Schedule</h1>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+          
+            <th>Recipient Name</th>
+            <th>Bank Name</th>
+            <th>Loan Amount</th>
+            <th>Loan Type</th>
+            <th>Loan Period</th>
+            <th>Due Date</th>
+            <th>Payment Freq</th>
+            <th>Principal amount</th>
+            <th>Interest</th>
+            <th>Installment</th>
+            <th>loan Balance</th>
+        </tr>
+    </thead>
+
+
+        @foreach (var viewSchedule in Model)
+     {
+        <tr>
+            <td>@viewSchedule.FullName</td>
+            <td>@viewSchedule.Name</td>
+            <td>@viewSchedule.LoanAmount</td>
+            <td>@viewSchedule.LoanType</td>
+            <td>@viewSchedule.LoanPeriod</td>
+            <td>@viewSchedule.DueDate</td>
+            <td>@viewSchedule.PaymentFreq</td>
+            <td>@viewSchedule.PrincipalAmount</td>
+            <td>@viewSchedule.Interest</td>
+            <td>@viewSchedule.Installment</td>
+            <td>@viewSchedule.LoanBalance</td>
+        </tr>
+
+    };
+    
+        
+
+    
+
+
+</table>

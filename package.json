@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@grapecity/ar-viewer": "^17.1.2"
+  }
+}

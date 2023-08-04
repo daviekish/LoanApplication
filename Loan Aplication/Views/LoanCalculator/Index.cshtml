@@ -1,0 +1,48 @@
+﻿@model List<DomainLayer.Loans>
+
+@{
+}
+
+<h1>Loan List</h1>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+           
+            <th>Recipient Name</th>
+            <th>Bank Name</th>
+            <th>Loan Type</th>
+            <th>Loan Amount</th>
+            <th>Loan Period</th>
+            <th>Starting Date</th>
+            <th>Payment Freq</th>
+            <th>Process Fee</th>
+            <th>Excess Duty</th>
+            <th>Legal Fee</th>
+            <th>loan amount</th>
+        </tr>
+    </thead>
+    
+        @foreach (var viewloans in Model)
+        {
+            <tr>
+
+                <td>@viewloans.FullName</td>
+                <td>@viewloans.Name</td>
+                <td>@viewloans.LoanType</td>
+                <td>@viewloans.LoanAmount</td>
+                <td>@viewloans.LoanPeriod</td>
+                <td>@viewloans.StartDate.ToString("dd-MM-yyyy")</td>
+                <td>@viewloans.PaymentFreq</td>
+                <td>@viewloans.ProcessingFee</td>
+                <td>@viewloans.ExcessDuty</td>
+                <td>@viewloans.LegalFees</td>
+                <td>@viewloans.TakeHome</td>
+                <td><a href="LoanCalculator/Create?name=@viewloans.FullName">Loan Schedule</a></td>
+            </tr>
+        }
+    
+</table>
+                
